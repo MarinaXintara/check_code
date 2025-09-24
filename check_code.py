@@ -18,14 +18,23 @@ def check(code):
         elif char in special_chars:
             has_special = True
 
-       if has_digit and has_upper and has_special:
-        print("Ο κωδικός είναι ισχυρός")
+    if not has_digit and not has_upper and not has_special:
+       print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει τίποτα από τα απαραίτητα.")
+    elif not has_digit and not has_upper:
+       print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει ψηφία και κεφαλαία γράμματα.")
+    elif not has_digit and not has_special:
+       print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει ψηφία και σύμβολα.")
+    elif not has_upper and not has_special:
+       print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει κεφαλαία γράμματα και σύμβολα.")
+    elif not has_digit:
+       print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει ψηφία.")
+    elif not has_upper:
+       print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει κεφαλαία γράμματα.")
+    elif not has_special:
+       print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει σύμβολα.")
     else:
-        if not has_digit:
-            print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει ψηφία.")
-        if not has_upper:
-            print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει κεφαλαία γράμματα.")
-        if not has_special:
-            print("Ο κωδικός δεν είναι ισχυρός, γιατί δεν περιλαμβάνει σύμβολα.")
+       print("Ο κωδικός είναι ισχυρός")
+
+
 
 check(code)
